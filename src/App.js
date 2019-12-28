@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// 1.引入依赖
+import React,{Component} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// 2.引入css
+import "./App.css"
+
+export default class App extends Component {
+  render(){
+    let title = ['Pull requests','lssues','Marketplace','Explore']
+    let isBoy = true
+    return <div>
+      <ul>
+        {
+          title.map((v,i) => <li key={i}>{v}</li>)
+        }
+      </ul>
+      {
+        isBoy?'男':'女'
+      }
     </div>
-  );
+  }
 }
-
-export default App;
